@@ -1,0 +1,396 @@
+$(document).ready(function () {
+
+    // On DOM ready,
+    $(function () {
+        // Cache selectors
+        var $accordion = $(".js-accordion");
+        var $allPanels = $(".accordion-panel").hide();
+        var $allItems = $(".accordion-item");
+
+        $(".accordion-item:first-child .accordion-panel").show();
+
+        // Event listeners
+        $accordion.on("click", ".accordion-toggle", function () {
+            // Toggle the current accordion panel and close others
+            $allPanels.slideUp();
+            $allItems.removeClass("is-open");
+            if (
+                $(this).next().is(":visible")) {
+                $(".accordion-panel").slideUp();
+            } else {
+                $(this).
+                next().
+                slideDown().
+                closest(".accordion-item").
+                addClass("is-open");
+            }
+            return false;
+        });
+    });
+
+    var deviceWidth = $(window).width();
+
+    if (deviceWidth < 768) {
+        $('.dropdown .drop_link').addClass('dropdown-toggle');
+        $('.dropdown .drop_link').attr('data-toggle', 'dropdown');
+    }
+
+    AOS.init({
+        duration: 1200
+    });
+
+    var scrollLink = $('.scroll');
+
+    // Smooth scrolling
+    scrollLink.click(function (e) {
+        e.preventDefault();
+        $('body,html').animate({
+            scrollTop: $(this.hash).offset().top
+        }, 1000);
+    });
+
+    $('.grid_1_carousel').owlCarousel({
+        loop: false,
+        nav: true,
+        margin: 0,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+
+    $('.home_blog_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 30,
+        stagePadding: 150,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1,
+                stagePadding: 15
+            },
+            600: {
+                items: 2,
+                stagePadding: 15
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+
+
+    $('.home_clients_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+
+    $('.home_partnership_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+
+    $('.home_memberships_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+
+    $('.home_proficiency_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+    $('.home_certifications_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+
+    $('.home_testimonials_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 30,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+    $('.service_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 30,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 2
+            }
+        }
+    });
+
+    $('.shadow_box_carousel').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 30,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+
+    $('.grid_5_carousel').owlCarousel({
+        loop: false,
+        nav: true,
+        margin: 2,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+    });
+
+// services slide for homepage
+    $('.servicesSlider').owlCarousel({
+        loop: true,
+        nav: true,
+        margin: 30,
+        navText: [
+    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+});
+
+$(window).scroll(function () {
+
+    var scrollTop = $(window).scrollTop();
+
+    if (scrollTop > 500) {
+        $('.nav_wrap').addClass('sticky');
+    } else {
+        $('.nav_wrap').removeClass('sticky');
+    }
+
+    /*var solutions = $('#home_solutions').offset().top - 100;
+    
+    var home_blog = $('#home_blog').offset().top - 100;
+
+    if (scrollTop > solutions && scrollTop < home_blog) {
+        $('body').addClass('dark');
+    } else {
+        $('body').removeClass('dark');
+    }*/
+
+
+});
+
+window.onload = function () {
+    setTimeout(function () {
+        $('#loading-spinner').remove();
+    }, 500);
+};
+
+
+function onYouTubeIframeAPIReady() {
+    var player;
+    player = new YT.Player('yt-embed', { // Replaces the <div id="yt-embed"> with an iframe
+        videoId: 'a80or_pnkzU', // Video ID
+        //                            width: 960, // Video width
+        //                            height: 600, // Video height
+        playerVars: {
+            autoplay: 1, // Auto-play
+            controls: 1, // Turn off controls
+            showinfo: 0, // Hide the video title
+            modestbranding: 1, // Hide all YouTube branding
+            loop: 1, // Loop video
+            fs: 0, // Remove full screen button
+            cc_load_policy: 1, // Turn off closed captions
+            iv_load_policy: 3, // Turn off annotations
+            autohide: 1, // Turn off controls auto-hiding
+            rel: 0, // Turn off related content on pause
+            disablekb: 1 // Turn off keyboard controls,
+        },
+        events: {
+            onReady: function (e) {
+                e.target.mute();
+            }
+        }
+    });
+
+
+}
+
+onYouTubeIframeAPIReady();
